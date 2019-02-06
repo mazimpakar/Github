@@ -19,7 +19,7 @@ export class GithubService {
     this.user = new User(" ", " ", " ", " ", " ", 0, " ");
     this.repos = new Repos(" ", " ", " ", " ", " ");
   }
-  getProfileInfo(username) {
+  getGithubInfo(username) {
     interface ApiResponse {
       name: string;
       login: string;

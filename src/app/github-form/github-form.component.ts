@@ -9,7 +9,7 @@ import { GithubService } from "../services/github.service";
 export class GithubFormComponent implements OnInit {
   submitSearch(name) {
     console.log(name);
-    this.GithubService.getProfileInfo(name);
+    this.GithubService.getGithubInfo(name);
     this.repoService.getRepoInfo(name);
   }
   constructor(
