@@ -10,7 +10,7 @@ export class GithubFormComponent implements OnInit {
   submitSearch(name) {
     console.log(name);
     this.GithubService.getProfileInfo(name);
-    this.repoService.getReposInfo(name);
+    this.repoService.getRepoInfo(name);
   }
   constructor(
     private GithubService: GithubService,

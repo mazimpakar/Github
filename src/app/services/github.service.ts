@@ -34,22 +34,22 @@ export class GithubService {
       this.http
         .get<ApiResponse>(environment.apiUrl + username + environment.apikey)
         .toPromise()
-        .then(profile => {
-          this.user.name = profile.name;
-          this.user.login = profile.login;
-          this.user.avatar_url = profile.avatar_url;
-          this.user.email = profile.email;
-          this.user.location = profile.location;
-          this.user.public_repos = profile.public_repos;
-          this.user.html_url = profile.html_url;
+        .then(github => {
+          this.user.name = github.name;
+          this.user.login = github.login;
+          this.user.avatar_url = github.avatar_url;
+          this.user.email = github.email;
+          this.user.location = github.location;
+          this.user.public_repos = github.public_repos;
+          this.user.html_url = github.html_url;
 
-          console.log(profile);
+          console.log(github);
           resolve();
         });
     });
     return promise;
   }
-  getReposInfo(username) {
+  getRepoInfo(username) {
     interface ApiResponse {
       name: string;
       homepage: string;
