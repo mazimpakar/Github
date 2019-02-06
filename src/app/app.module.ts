@@ -1,17 +1,16 @@
+// iimport { BrowserModule } from '@angular/platform-browser';
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
-import { AppRoutingModule } from "./app-routing.module";
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClient } from "@angular/common/http";
 import { AppComponent } from "./app.component";
-import { GithubComponent } from "./github/github.component";
-import { GithubFormComponent } from "./github-form/github-form.component";
-import { UserComponent } from './user/user.component';
-import { RepostoryComponent } from './repostory/repostory.component';
-
+import { UserComponent } from "./components/user/user.component";
+import { RepostoryComponent } from "./components/repostory/repostory.component";
+import { GithubService } from "./services/github.service";
 @NgModule({
-  declarations: [AppComponent, GithubComponent, GithubFormComponent, UserComponent, RepostoryComponent],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  declarations: [AppComponent, UserComponent, RepostoryComponent],
+  imports: [BrowserModule, ReactiveFormsModule, HttpClient],
+  providers: [GithubService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
