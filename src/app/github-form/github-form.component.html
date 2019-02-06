@@ -6,7 +6,7 @@
   <div class="jumbotron">
     <div class="row">
       <div class="col m-6">
-        <form id="name">
+        <!-- <form [(ngModel)]>
           <div class="form-group">
             <label for="name"> User name</label><br />
             <input
@@ -15,10 +15,21 @@
               placeholder="User Name"
               id="name"
             /><br />
+          </div> -->
+        <form>
+          <div class="form-group">
+            <label for="name"> User name</label><br />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter Github username here"
+              (keyup)="submitSearch($event)"
+            />
           </div>
-
-          <button type="Search" class="btn btn-primary btn-lg">Submit</button>
         </form>
+
+        <!-- <button type="Search" class="btn btn-primary btn-lg">Submit</button>
+        </form> -->
       </div>
     </div>
   </div>
