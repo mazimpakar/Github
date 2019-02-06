@@ -9,11 +9,11 @@ import { GithubService } from "../services/github.service";
 export class GithubFormComponent implements OnInit {
   submitSearch(name) {
     console.log(name);
-    this.profileService.getProfileInfo(name);
+    this.GithubService.getProfileInfo(name);
     this.repoService.getReposInfo(name);
   }
   constructor(
-    private profileService: GithubService,
+    private GithubService: GithubService,
     private repoService: GithubService
   ) {}
   ngOnInit() {}
