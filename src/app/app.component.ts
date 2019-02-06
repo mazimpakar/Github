@@ -1,13 +1,13 @@
 // mport {Component, OnInit} from '@ angular / core';
 import { FormControl } from "@ angular / forms";
 import { GithubService } from "./services/github.service";
-import { User } from "./models/user.model";
+
 import {
   filter,
   switchMap,
   debounceTime,
   catchrepostory
-} from "rxjs / operators";
+} 
 import { EMPTY } from "rxjs";
 @Component({
   selector: "app-root",
