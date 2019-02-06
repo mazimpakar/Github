@@ -1,4 +1,4 @@
-// import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { GithubService } from "../services/github.service";
 
 @Component({
@@ -6,14 +6,14 @@ import { GithubService } from "../services/github.service";
   templateUrl: "./github-form.component.html",
   styleUrls: ["./github-form.component.css"]
 })
-export class GithubFormComponent implements OnInit {
+export class ProfileFormComponent implements OnInit {
   submitSearch(name) {
-    this.githubService.getProfileInfo(name.target.value);
-    this.reposService.getReposInfo(name.target.value);
+    this.profileService.getProfileInfo(name.target.value);
+    this.repoService.getReposInfo(name.target.value);
   }
   constructor(
-    private githubService: GithubService,
-    private reposService: GithubService
+    private profileService: GithubService,
+    private repoService: GithubService
   ) {}
   ngOnInit() {}
 }
