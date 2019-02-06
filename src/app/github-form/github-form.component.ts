@@ -6,10 +6,11 @@ import { GithubService } from "../services/github.service";
   templateUrl: "./github-form.component.html",
   styleUrls: ["./github-form.component.css"]
 })
-export class ProfileFormComponent implements OnInit {
+export class GithubFormComponent implements OnInit {
   submitSearch(name) {
-    this.profileService.getProfileInfo(name.target.value);
-    this.repoService.getReposInfo(name.target.value);
+    console.log(name);
+    this.profileService.getProfileInfo(name);
+    this.repoService.getReposInfo(name);
   }
   constructor(
     private profileService: GithubService,

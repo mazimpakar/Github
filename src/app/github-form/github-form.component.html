@@ -6,16 +6,17 @@
   <div class="jumbotron">
     <div class="row">
       <div class="col m-6">
-        <form>
+        <form (ngSubmit)="submitSearch(username.value)">
           <div class="form-group">
             <label for="name"> User name</label><br />
             <input
               type="text"
               class="form-control"
               placeholder="Enter Github username here"
-              (keyup)="submitSearch($event)"
+              #username
             />
           </div>
+          <button type="submit">search</button>
         </form>
       </div>
     </div>
