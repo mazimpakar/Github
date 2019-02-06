@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { Github } from "../github";
+// import { Component, OnInit } from '@angular/core';
+import { GithubService } from "../services/github.service";
 
 @Component({
   selector: "app-github-form",
@@ -7,23 +7,13 @@ import { Github } from "../github";
   styleUrls: ["./github-form.component.css"]
 })
 export class GithubFormComponent implements OnInit {
-  // newUser = new User(0, "");
-  newUserName: string;
-  theUser: any;
-  constructor() {}
-
+  submitSearch(name) {
+    this.githubService.getProfileInfo(name.target.value);
+    this.reposService.getReposInfo(name.target.value);
+  }
+  constructor(
+    private githubService: GithubService,
+    private reposService: GithubService
+  ) {}
   ngOnInit() {}
 }
-
-// import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
-// // import { User } from "../../models/user.model";
-// @Component({
-//   selector: "app-user",
-//   templateUrl: "./user.component.html",
-//   styleUrls: ["./user.component.css"],
-//   changeDetection: ChangeDetectionStrategy.OnPush
-// })
-// export class UserComponent {
-//   @Input()
-//   user: User;
-// }
